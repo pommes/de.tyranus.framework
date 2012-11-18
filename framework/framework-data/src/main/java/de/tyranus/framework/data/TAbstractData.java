@@ -9,10 +9,8 @@ import java.util.Set;
 
 /**
  * Super class for any data objects, transfer objects, entity objets which main
- * use is to store data
- * in fields. This class makes it possible to pre implement the equals, toString
- * and hashCode
- * method.
+ * use is to store data in fields. This class makes it possible to pre implement
+ * the equals, toString and hashCode method.
  * 
  * @author tim
  */
@@ -104,20 +102,28 @@ public abstract class TAbstractData {
 		return _fields.keySet();
 	}
 
-	protected void setStringValue(String fieldname, String value) {
+	protected void setString(String fieldname, String value) {
 		_fields.put(fieldname, value);
 	}
 
-	protected String getStringValue(String fieldname) {
+	protected String getString(String fieldname) {
 		return (String) _fields.get(fieldname);
 	}
 
-	protected void setIntValue(String fieldname, int value) {
+	protected void setInt(String fieldname, int value) {
 		_fields.put(fieldname, Integer.valueOf(value));
 	}
 
-	protected int getIntValue(String fieldname) {
+	protected int getInt(String fieldname) {
 		return ((Integer) _fields.get(fieldname)).intValue();
+	}
+
+	protected void setBoolean(String fieldname, boolean value) {
+		_fields.put(fieldname, Boolean.valueOf(value));
+	}
+
+	protected boolean getBoolean(String fieldname) {
+		return ((Boolean) _fields.get(fieldname)).booleanValue();
 	}
 
 	protected void set(String fieldname, Object value) {
